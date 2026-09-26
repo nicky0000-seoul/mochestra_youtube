@@ -7,7 +7,6 @@
   --player-bg: #463c3a;
   --player-border: #8a7f3a;
   --accent: #e6c84a;
-  --fav: #4b3ddc;
   --row-h: clamp(42px, 6vh, 56px);
   --row-gap: clamp(8px, 1.4vh, 12px);
 }
@@ -150,8 +149,13 @@ body {
   width: 26px; height: 26px;
   display: grid; place-items: center;
 }
-.star-btn svg { width: 100%; height: 100%; fill: var(--accent); transition: fill .15s; }
-.star-btn.is-fav svg { fill: var(--fav); }
+.star-btn svg {
+  width: 100%; height: 100%;
+  fill: none;
+  stroke: var(--accent); stroke-width: 1.8; stroke-linejoin: round;
+  transition: fill .15s;
+}
+.star-btn.is-fav svg { fill: var(--accent); }
 
 .empty {
   padding: clamp(14px, 2.4vh, 22px);
