@@ -13,7 +13,7 @@ export default function Player({ videoId, onPlayClick }) {
       ) : (
         <button className="play" aria-label="재생" onClick={onPlayClick}>
           <svg viewBox="0 0 100 100">
-            <polygon points="20,8 92,50 20,92" fill="#e6c84a" />
+            <polygon points="20,8 92,50 20,92" fill="currentColor" />
           </svg>
         </button>
       )}

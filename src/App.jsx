@@ -5,6 +5,7 @@ import FavoritesPanel from './components/FavoritesPanel';
 import RecommendedPanel from './components/RecommendedPanel';
 import Player from './components/Player';
 import KeyDialog from './components/KeyDialog';
+import ThemeToggle from './components/ThemeToggle';
 import { useFavorites } from './hooks/useFavorites';
 import { getItem, setItem } from './lib/storage';
 import { YOUTUBE_API_KEY } from './lib/youtube';
@@ -36,7 +37,10 @@ export default function App() {
   }
 
   return (
-    <main className="frame">
+    <main className="frame tab-video">
+      <div className="frame-bar">
+        <ThemeToggle />
+      </div>
       <Tabs active={activeTab} onChange={setActiveTab} />
 
       <SearchPanel
