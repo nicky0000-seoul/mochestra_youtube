@@ -35,7 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: clamp(10px, 2vh, 30px);
-  overflow: hidden;
+  overflow-y: auto; /* 그래도 넘치면 틀 안에서 스크롤 */
 }
 
 .frame-bar {
@@ -76,7 +76,7 @@ body {
   display: none;
   flex-direction: column;
   gap: inherit;
-  min-height: 0;
+  flex-shrink: 0; /* 창이 낮아도 검색창·목록은 줄지 않음 (대신 플레이어가 줄어듦) */
 }
 .panel.active { display: flex; }
 
@@ -195,7 +195,9 @@ body {
   border-radius: 20px;
   overflow: hidden;
   display: grid; place-items: center;
-  flex-shrink: 0;
+  /* 세로 공간이 모자라면 플레이어 높이가 줄어듦. 영상은 iframe 안에서 레터박스 처리됨 */
+  flex: 0 1 auto;
+  min-height: 120px;
 }
 .player .play {
   border: 0; background: none; cursor: pointer;
