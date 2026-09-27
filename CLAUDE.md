@@ -39,8 +39,9 @@ MOCHESTRA의 "영상" 탭. YouTube 검색·재생 플레이어 (React 19 + Vite 
 
 ### 다음 할 일
 - [x] 라이트/다크 테마를 실제 화면에서 확인 (탭, 검색 결과, 플레이어, 키 입력 창) — 2026-09-27 대비 검사 78개 통과
-- [ ] GitHub Pages 배포 결과 확인 — 2026-09-27 흰 화면(main.jsx 404). `base` 경로 오타는 수정함. Settings → Pages → Source를 "GitHub Actions"로 바꾼 뒤 https://nicky0000-seoul.github.io/mochestra_youtube/ 에서 앱이 뜨는지 확인
+- [x] GitHub Pages 배포 결과 확인 — 2026-09-27 `base` 오타 수정 + Source를 "GitHub Actions"로 변경 후 앱 표시 확인
+- [x] 검색 실패 "Requests from referer ... are blocked" — 2026-09-27 새 Google Cloud 프로젝트에서 키 재발급 (웹사이트 제한: `https://nicky0000-seoul.github.io/*`, `http://localhost:5173/*` / API 제한: YouTube Data API v3). 두 주소에서 검색 확인
 - [ ] 세로가 짧은 창(예: 800×600)에서 플레이어가 검색 결과 칸을 덮음. 레이아웃 수정 필요
 - [ ] 검색 결과 목록 줄은 API 키가 있을 때만 보여서 대비 검사를 못 함. 키를 넣고 확인
 - [ ] 추천 탭 데이터 소스 만들기 (`App.jsx`의 `recommended`가 빈 배열)
-- [ ] YouTube API 키가 `src/lib/youtube.js`에 하드코딩되어 공개 저장소에 올라가 있음. Google Cloud 콘솔에서 HTTP referrer 제한이 걸려 있는지 확인
+- [x] YouTube API 키가 `src/lib/youtube.js`에 하드코딩되어 공개 저장소에 올라가 있음 — HTTP referrer 제한이 걸려 있음을 2026-09-27 확인 (허용 목록만 갱신하면 됨)

@@ -1,5 +1,5 @@
 // 링크나 11자리 영상 ID면 바로 재생
-export const YOUTUBE_API_KEY = 'AIzaSyBH7VJfusjy07rJDNgQ58kkZh-XqX2HA64';
+export const YOUTUBE_API_KEY = 'AIzaSyBBKXifYvOXHmaMAC2ka_2cszHay99PfMw';
 
 const searchCache = new Map();
 const pendingSearches = new Map();
