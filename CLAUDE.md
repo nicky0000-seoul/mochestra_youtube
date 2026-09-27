@@ -4,9 +4,9 @@ MOCHESTRA의 "영상" 탭. YouTube 검색·재생 플레이어 (React 19 + Vite 
 
 ## 실행 / 배포
 
-- 개발 서버: `npm run dev` → http://localhost:5173/mochestra-youtube/ (`.claude/launch.json`의 `youtube` 설정)
+- 개발 서버: `npm run dev` → http://localhost:5173/mochestra_youtube/ (`.claude/launch.json`의 `youtube` 설정)
 - 빌드: `npm run build` → `dist/` (`dist`는 gitignore됨)
-- 배포: `main`에 push하면 `.github/workflows/deploy.yml`이 GitHub Pages로 자동 배포. `vite.config.js`의 `base`가 `/mochestra-youtube/`이므로 경로를 바꾸면 같이 수정할 것.
+- 배포: `main`에 push하면 `.github/workflows/deploy.yml`이 GitHub Pages로 자동 배포. `vite.config.js`의 `base`는 저장소 이름과 같은 `/mochestra_youtube/`(밑줄)여야 함. Pages 설정의 Source는 반드시 "GitHub Actions" (Deploy from a branch면 빌드 전 원본이 올라가 흰 화면이 됨).
 - 이 폴더는 D 드라이브라 git이 "dubious ownership" 오류를 냄. `git config --global --add safe.directory D:/mochestra_youtube`를 한 번 실행하거나 `git -c safe.directory=D:/mochestra_youtube ...`로 실행.
 
 ## 구조
@@ -39,7 +39,7 @@ MOCHESTRA의 "영상" 탭. YouTube 검색·재생 플레이어 (React 19 + Vite 
 
 ### 다음 할 일
 - [x] 라이트/다크 테마를 실제 화면에서 확인 (탭, 검색 결과, 플레이어, 키 입력 창) — 2026-09-27 대비 검사 78개 통과
-- [x] GitHub Pages 배포 결과 확인 — 2026-09-27 배포 성공, https://nicky0000-seoul.github.io/mochestra_youtube/
+- [ ] GitHub Pages 배포 결과 확인 — 2026-09-27 흰 화면(main.jsx 404). `base` 경로 오타는 수정함. Settings → Pages → Source를 "GitHub Actions"로 바꾼 뒤 https://nicky0000-seoul.github.io/mochestra_youtube/ 에서 앱이 뜨는지 확인
 - [ ] 세로가 짧은 창(예: 800×600)에서 플레이어가 검색 결과 칸을 덮음. 레이아웃 수정 필요
 - [ ] 검색 결과 목록 줄은 API 키가 있을 때만 보여서 대비 검사를 못 함. 키를 넣고 확인
 - [ ] 추천 탭 데이터 소스 만들기 (`App.jsx`의 `recommended`가 빈 배열)
